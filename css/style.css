@@ -1,0 +1,751 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+/* For Global usage of things and writing clean code */
+
+:root {
+  --primary-color: #555555;
+  --secondary-color: #28303f;
+  --default-btn-color: #4172dc;
+  --accent: #262626;
+  --primary-font-size: 1.4rem;
+  --heading-font-size: 3.2rem;
+}
+
+.cur-po {
+  cursor: pointer;
+}
+
+.absolute-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.max-width {
+  max-width: 80%;
+  margin: auto;
+}
+
+.ph-caret-down {
+  font-size: var(--primary-font-size);
+  margin-left: 5px;
+}
+
+.ul {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* Till here the classes are globle and applied to many of the HTML elements */
+/* They are used to make the code reusable and ofr keep it clean */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ------------------------------------------------------------NAV is from here---------------------------------------------------- */
+
+nav {
+  display: flex;
+  height: 10rem;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#logo-img {
+  width: 4rem;
+  margin: auto;
+}
+
+#logo {
+  font-size: var(--heading-font-size);
+}
+
+/* ul {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+} */
+
+.menu {
+  margin-left: 3rem;
+}
+
+.menu-items {
+  list-style: none;
+}
+
+.menu-items > a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: var(--primary-font-size);
+}
+
+#search-products {
+  opacity: 0.75;
+  height: 4rem;
+  width: 20rem;
+  border-radius: 5px;
+  padding-left: 2rem;
+  align-self: center;
+  border: 1px solid gray;
+  transform: translateY(4px);
+}
+
+.social-icons {
+  display: flex;
+  gap: 2rem;
+}
+
+.social-icons-item {
+  list-style: none;
+}
+
+.social-icons-item > i {
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+
+#list {
+  display: none;
+}
+
+.logo-search-wrapper,
+.menu-social-wrapper {
+  display: flex;
+  gap: 4rem;
+}
+
+@media (max-width: 768px) {
+  * {
+    overflow-x: hidden;
+    font-size: 9px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo-search-wrapper,
+  .menu-social-wrapper {
+    margin-top: 1rem;
+    justify-content: space-between;
+    width: 65rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .menu-items {
+    display: block;
+  }
+
+  nav {
+    height: auto;
+  }
+
+  #logo {
+    text-align: center;
+    font-size: 2.2rem;
+  }
+
+  #search-products {
+    width: 80vw;
+  }
+
+  .logo-search-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+  #list {
+    display: inline;
+    font-size: 2.6rem;
+    float: left;
+  }
+
+  #listBtn {
+    border: none;
+    background: white;
+    float: left;
+    z-index: 2;
+  }
+
+  .social-icons {
+    display: none;
+  }
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  .menu-open {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 12rem;
+    /* z-index: -1; */
+    padding-left: 15px;
+    background-color: #fff;
+    visibility: visible;
+    pointer-events: all;
+    opacity: 1;
+    transition: 0.3s;
+  }
+}
+
+/*------------------------------------------------------------NAV is till here----------------------------------------------------*/
+
+/* ------------------------------------------------------------Options is from here---------------------------------------------------- */
+
+.option {
+  height: 7.2rem;
+  background: var(--accent);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.options {
+  color: white;
+  list-style: none;
+  font-size: var(--primary-font-size);
+}
+
+#categories {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.first-option {
+  margin-right: 2rem;
+}
+
+.sub-first {
+  margin-right: 2rem;
+  gap: 4rem;
+}
+
+.first-option,
+.second-option {
+  justify-content: space-between;
+  border-right: 1px solid grey;
+  gap: 4rem;
+  color: white;
+  height: 80%;
+}
+
+.description > p {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--primary-font-size);
+}
+
+.description {
+  margin-right: 2rem;
+}
+
+.third-option {
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  * {
+    font-size: 9px;
+    overflow-x: hidden;
+  }
+
+  .second-option {
+    display: none;
+  }
+  .first-option {
+    border: none;
+  }
+  .option {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* ----------------------------------------------Options is till here----------------------------------*/
+
+/*----------------------------------------------- Categories is from here--------------------------------*/
+
+.categories {
+  height: 6rem;
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+}
+
+.category {
+  font-size: var(--primary-font-size);
+  list-style: none;
+  color: var(--primary-color);
+}
+
+/* ul {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+} */
+
+.category {
+  cursor: pointer;
+}
+
+.category.active {
+  color: red;
+}
+
+@media (max-width: 768px) {
+  * {
+    font-size: 8px;
+    overflow-x: hidden;
+  }
+
+  .categories {
+    gap: 1.3rem;
+  }
+}
+
+/*----------------------------------------------- Categories is till here -------------------------------*/
+
+.sale {
+  display: flex;
+}
+
+.name-of-products {
+  font-size: var(--heading-font-size);
+  text-transform: uppercase;
+  color: white;
+}
+
+.right {
+  background: #428afa;
+  height: 46rem;
+  transform: translateY(-3px);
+  width: 81rem;
+}
+
+#smaller-text {
+  font-size: 2.8rem;
+  text-transform: none;
+  color: white;
+}
+
+.paragraph {
+  display: flex;
+  flex-direction: column;
+  width: 75rem;
+  height: 100%;
+}
+
+#buy-now {
+  width: 24.3rem;
+  height: 5.6rem;
+  color: white;
+  text-transform: capitalize;
+  background: var(--default-btn-color);
+  border: none;
+  display: block;
+  margin: 0 auto;
+  border-radius: 6px;
+  font-size: var(--primary-font-size);
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  * {
+    font-size: 8px;
+    overflow-x: hidden;
+  }
+
+  .left {
+    height: 46rem;
+    overflow: hidden;
+  }
+
+  .right {
+    height: 46rem;
+    transform: translateY(2px);
+  }
+
+  #left-img {
+    /* width: 83rem; */
+    transform: translate(-70px, -19px);
+  }
+
+  .paragraph {
+    overflow: hidden;
+  }
+
+  .name-of-products,
+  #smaller-text {
+    margin-right: 22rem;
+  }
+
+  #buy-now {
+    margin-right: 37rem;
+  }
+}
+/*  ----------------------------------------------- FlashSales is from here -------------------------------     */
+
+.flash-sales {
+  flex-direction: column;
+  height: 50rem;
+  margin-top: 2rem;
+}
+
+#flash-sales-heading {
+  font-size: 2.6rem;
+  transform: translateX(-55rem);
+}
+
+.products {
+  display: flex;
+  margin-top: 5rem;
+  gap: 2rem;
+}
+
+.first-product,
+.second-product,
+.third-product,
+.fourth-product {
+  transition: 0.2s;
+  text-align: center;
+  border: 1px solid black;
+  flex-direction: column;
+  width: 30.5rem;
+  border-radius: 1rem;
+  gap: 2rem;
+}
+
+.deal-of-day {
+  color: var(--primary-color);
+  font-size: 2rem;
+  padding-top: 2rem;
+}
+
+.time-remaining {
+  font-size: var(--primary-font-size);
+}
+
+.product-name {
+  font-size: 1.6rem;
+}
+
+.product-category {
+  color: var(--primary-color);
+}
+
+.prices {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+}
+
+s {
+  font-size: var(--primary-font-size);
+}
+
+.product-price {
+  color: red;
+  font-size: var(--primary-font-size);
+}
+
+.product-name {
+  font-size: 1.6rem;
+}
+
+.product-category {
+  font-size: var(--primary-font-size);
+}
+
+.product-discount {
+  background: red;
+  padding: 0.2rem 1rem;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.product-reviews {
+  padding-top: 1rem;
+}
+
+.product-reviews > img {
+  width: 1.3rem;
+}
+
+@media (max-width: 768px) {
+  * {
+    overflow-x: hidden;
+    font-size: 9px;
+  }
+
+  .flash-sales {
+    height: 110rem;
+  }
+
+  .products {
+    display: grid;
+    grid-template-columns: repeat(2, 40rem);
+    grid-template-rows: repeat(2, 40rem);
+  }
+}
+
+/*  ----------------------------------------------- FlashSales is till here -------------------------------     */
+
+/*----------------------------------------------- Trending Section is from here -------------------------------*/
+
+.trending {
+  gap: 2rem;
+}
+
+.trending-img {
+  border-radius: 10px 10px 0 0;
+}
+
+#trending-heading {
+  font-size: 2rem;
+  transform: translateX(-52rem);
+  margin-bottom: 5rem;
+  margin-top: 2rem;
+}
+
+.trending-description {
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-5px);
+  background: var(--accent);
+  padding: 2rem;
+  border-radius: 0 0 10px 10px;
+}
+
+.trending-name {
+  color: white;
+  font-size: 1.6rem;
+}
+
+.trending-category {
+  font-size: var(--primary-font-size);
+  color: gray;
+}
+
+.trending-price {
+  display: flex;
+  align-items: center;
+}
+
+.price {
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  padding: 1rem;
+  width: 15rem;
+  height: 5rem;
+  font-size: var(--primary-font-size);
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.price:hover {
+  background: white;
+  color: var(--accent);
+  transition: 0.2s;
+}
+
+/*----------------------------------------------- Trending Section is till here -------------------------------*/
+
+/*----------------------------------------------- Cards are from here -------------------------------*/
+
+.all-cards {
+  flex-direction: column;
+}
+
+.card-1-2 {
+  margin-top: 5rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.card-4-5 {
+  display: flex;
+  gap: 2rem;
+}
+
+.card-4-right,
+.card-5-right {
+  height: 34rem;
+}
+
+.card-4-left {
+  height: 34.7rem;
+  background: #d11fb5;
+}
+
+.card-5-left {
+  height: 34.1rem;
+  background: #0186c4;
+}
+
+.card-1-left {
+  background: #bf2e3b;
+  height: 38.4rem;
+}
+
+.card-2-left {
+  height: 38.4rem;
+  background: #1d5159;
+}
+
+.card-3 {
+  background: #f7ddd0;
+  width: 134.8rem;
+  margin: 10rem 0rem;
+}
+
+.card-content {
+  display: flex;
+}
+
+.card-1-left > p,
+.card-2-left > p {
+  color: white;
+}
+.card-1-left,
+.card-2-left,
+.card-4-left,
+.card-5-left {
+  width: 31rem;
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card-heading {
+  font-size: 3.4rem;
+}
+
+.card-3-left > .card-heading {
+  font-size: 2.4rem;
+  color: #465d6b;
+}
+
+.card-3-left {
+  height: 22rem;
+  padding: 5rem 18rem;
+}
+
+.card-3-right {
+  margin-right: 5rem;
+}
+
+.card-3-left > .card-description {
+  font-size: 2rem;
+  color: #555555;
+}
+
+.card-description {
+  font-size: 2.4rem;
+}
+
+.card-1-right,
+.card-2-right {
+  width: 31rem;
+}
+
+.card-link > a {
+  font-size: var(--primary-font-size);
+  color: white;
+}
+
+/*----------------------------------------------- Cards are till here -------------------------------*/
+
+footer {
+  flex-direction: column;
+  height: 40rem;
+}
+
+.subscription {
+  width: 57.1rem;
+  height: 180.7rem;
+  border-radius: 6px;
+  justify-content: center;
+  text-align: center;
+  background: #7296ab;
+  transform: translateY(10rem);
+  margin-top: 10rem;
+}
+
+.subscription-content {
+  flex-direction: column;
+  height: 100%;
+  padding: 4.5rem;
+  gap: 1rem;
+}
+
+.subscription-content > h1 {
+  font-size: var(--heading-font-size);
+  color: white;
+}
+
+.subscription-content > p {
+  font-size: var(--primary-font-size);
+  color: white;
+}
+
+#user-email {
+  height: 3.6rem;
+  width: 26.8rem;
+  font-size: var(--primary-font-size);
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 6px;
+  border: 1px solid #7296ab;
+}
+
+.footer {
+  background: #d1e2eb;
+  width: 134.5rem;
+  height: 36.2rem;
+  gap: 14rem;
+  padding-bottom: 10rem;
+  z-index: -1;
+  padding-top: 15rem;
+}
+
+.ul > li {
+  list-style: none;
+  color: #555555;
+}
+
+.footer > ul {
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.list-heading {
+  font-size: var(--primary-font-size);
+  font-weight: bold;
+}
+
+.third-list {
+  transform: translateY(2.2rem);
+}
