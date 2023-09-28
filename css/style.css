@@ -379,13 +379,13 @@ nav {
   }
 
   .right {
+    width: 49.55rem;
     height: 46rem;
-    transform: translateY(2px);
   }
 
   #left-img {
-    /* width: 83rem; */
-    transform: translate(-70px, -19px);
+    width: 49.55rem;
+    height: 100%;
   }
 
   .paragraph {
@@ -394,11 +394,12 @@ nav {
 
   .name-of-products,
   #smaller-text {
-    margin-right: 22rem;
+    margin-right: 35rem;
+    text-align: center;
   }
 
   #buy-now {
-    margin-right: 37rem;
+    margin-right: 43rem;
   }
 }
 /*  ----------------------------------------------- FlashSales is from here -------------------------------     */
@@ -414,6 +415,12 @@ nav {
   transform: translateX(-55rem);
 }
 
+.first-second-product,
+.third-fourth-product {
+  gap: 2rem;
+  display: flex;
+}
+
 .products {
   display: flex;
   margin-top: 5rem;
@@ -426,7 +433,7 @@ nav {
 .fourth-product {
   transition: 0.2s;
   text-align: center;
-  border: 1px solid black;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
   flex-direction: column;
   width: 30.5rem;
   border-radius: 1rem;
@@ -503,9 +510,26 @@ s {
   }
 
   .products {
-    display: grid;
-    grid-template-columns: repeat(2, 40rem);
-    grid-template-rows: repeat(2, 40rem);
+    /* gap: 10rem; */
+  }
+
+  .first-second-product,
+  .third-fourth-product {
+    gap: 5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .first-product,
+  .second-product,
+  .third-product,
+  .fourth-product {
+    width: 39.5rem;
+  }
+
+  #flash-sales-heading {
+    font-size: 2.6rem;
+    transform: translateX(-28rem);
   }
 }
 
@@ -570,6 +594,27 @@ s {
   transition: 0.2s;
 }
 
+@media (max-width: 768px) {
+  * {
+    overflow-x: hidden;
+    font-size: 9px;
+  }
+
+  #trending-heading {
+    transform: translateX(-27rem);
+  }
+
+  .trending {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trending-img {
+    width: 77.1rem;
+    height: 43.9rem;
+  }
+}
+
 /*----------------------------------------------- Trending Section is till here -------------------------------*/
 
 /*----------------------------------------------- Cards are from here -------------------------------*/
@@ -625,7 +670,9 @@ s {
 }
 
 .card-1-left > p,
-.card-2-left > p {
+.card-2-left > p,
+.card-4-left > p,
+.card-5-left > p {
   color: white;
 }
 .card-1-left,
@@ -674,6 +721,60 @@ s {
 .card-link > a {
   font-size: var(--primary-font-size);
   color: white;
+}
+
+@media (max-width: 768px) {
+  * {
+    overflow-x: hidden;
+    font-size: 9px;
+  }
+
+  .card-heading,
+  .card-description,
+  .card-link {
+    overflow: hidden;
+    font-size: 2.4rem;
+  }
+
+  .card-heading {
+    font-size: 2.8rem;
+  }
+
+  .card-1,
+  .card-2,
+  .card-4,
+  .card-5 {
+    width: 399.5px;
+    height: 467px;
+  }
+
+  .card-1-right,
+  .card-2-right,
+  .card-4-right,
+  .card-5-right {
+    overflow: hidden;
+    width: 50%;
+  }
+  .card-1-right > img,
+  .card-2-right > img,
+  .card-4-right > img,
+  .card-5-right > img {
+    height: 100%;
+    width: 140%;
+  }
+
+  .card-1-left,
+  .card-2-left,
+  .card-4-left,
+  .card-5-left {
+    width: 50%;
+    gap: 0;
+    height: 46.7rem;
+  }
+
+  .card-3 {
+    width: 991px;
+  }
 }
 
 /*----------------------------------------------- Cards are till here -------------------------------*/
